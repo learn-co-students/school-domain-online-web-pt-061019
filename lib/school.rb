@@ -11,7 +11,7 @@ class School
 
   def add_student(name, grade)
     @roster[grade] ||= []
-    name.each do
+    name.each do name
       @roster[grade] << name
     end
   end
