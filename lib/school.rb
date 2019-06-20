@@ -1,4 +1,3 @@
-# code here!
 class School
   attr_accessor :name, :roster
 
@@ -9,19 +8,8 @@ class School
 
     def add_student(name, grade)
       @roster[grade] ||= []
-      @roster[grade] << student
+      @roster[grade] << name
     end
-
-# ||= if condition is true, create this array
-
-# from SG:
-# def add_student(name, grade)
-#   if roster.has_key?(grade) or roster[grade]
-#     roster[grade] << name
-#   else
-#     roster[grade] = [name]
-#   end
-# end
 
     def grade(grade)
      @roster[grade]
@@ -34,5 +22,16 @@ class School
       end
       sorted
     end
-
 end
+
+
+# ||= if condition is true, create this array
+
+# from SG:
+# def add_student(name, grade)
+#   if roster.has_key?(grade) or roster[grade]
+#     roster[grade] << name
+#   else
+#     roster[grade] = [name]
+#   end
+# end
