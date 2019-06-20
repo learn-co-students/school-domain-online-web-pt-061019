@@ -16,7 +16,7 @@ class School
 
 # from SG:
 # def add_student(name, grade)
-#   if roster.has_keys?(grade) or roster[grade]
+#   if roster.has_key?(grade) or roster[grade]
 #     roster[grade] << name
 #   else
 #     roster[grade] = [name]
@@ -24,7 +24,7 @@ class School
 # end
 
     def grade(grade)
-     @grade
+     @roster[grade]
     end
 
     def sort
