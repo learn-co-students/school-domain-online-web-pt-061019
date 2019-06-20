@@ -1,7 +1,7 @@
 class School
   attr_accessor :name, :roster
 
-    def intialize(name)
+    def initialize(name)
       @name = name
       @roster = {}
     end
@@ -23,6 +23,7 @@ class School
       sorted
     end
 end
+
 
 
 # ||= if condition is true, create this array
