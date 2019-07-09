@@ -12,17 +12,17 @@ class School
   end
   
   def grade(students_in_grade)
-    roster.detect do |a, b|
-      if a == students_in_grade
-        return b
+    roster.detect do |key, value|
+      if key == students_in_grade
+        return value
       end
     end
   end
   
   def sort 
     hash = {}
-    roster.each do |a, b| 
-    hash[a] = b.sort 
+    roster.each do |key, value| 
+    hash[key] = value.sort 
   end 
   hash
   end
