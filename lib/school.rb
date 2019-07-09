@@ -2,47 +2,43 @@ class School
 
   attr_accessor :roster, :name
 
+  # def roster
+  #   @roster
+  # end
+
   def initialize(school_name)
-    @name = school_name
     @roster = {}
+    @name = school_name
   end
 
   def add_student(student_name, grade)
-    #using or-equal operator
-    @roster[grade] ||= []
-    @roster[grade] << student_name
+    # if @roster[grade] == nil
+    #   @roster[grade] = [student_name]
+    # else
+    #   @roster[grade] << student_name
+    # end
 
-    #using if-conditional
-    #if @roster[grade] == nil
-    #  @roster[grade] = [student_name]
-    #else
-    #  @roster[grade] << student_name
-    #end
+    # using or-equal operator
+    # @roster[grade] ||= []
+    # @roster[grade] << student_name
 
-    #using ternary
-    # @roster[grade] ? @roster[grade] << student_name : @roster[grade] = [student_name]
+    # using ternary
+    @roster[grade] ? @roster[grade] << student_name : @roster[grade] = [student_name]
   end
 
-  def grade(grade)
-    @roster[grade]
-
-    # roster[grade] will also work b/c roster calls the roster getter created by
-    # attr_accessor :roster which returns @roster
-
+  def grade(num)
+    roster[num]
   end
 
   def sort
-    #non-destructive method
-    sorted = {}
-    @roster.map {|grade, students|
-      sorted[grade] = students.sort
-    }
-    sorted
+    # destructive method
+    # @roster.each {|key, value| value.sort!}
 
-    #destructive method
-    #roster.each do |grade, names|
-    #  names.sort!
-    #end
+    #non-destructive
+    sorted_hash = {}
+    @roster.each {|grade, names| sorted_hash[grade] = names.sort}
+    sorted_hash
+    # @roster.map {|grade, names| names.sort}
   end
 
 end
