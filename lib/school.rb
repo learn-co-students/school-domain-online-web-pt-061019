@@ -31,15 +31,12 @@ class School
     # hash
 
     # method 2
-    # @roster.each {|key, val| hash[key] = val.sort}
+    @roster.map {|key, val| hash[key] = val.sort}
+    hash
 
     # method 3 destruction
-    @roster.each {|key, val| val.sort!}
-
-
+    # @roster.each {|key, val| val.sort!}
     # binding.pry
-
-
 
     # hash = @roster.sort_by { |k, v| [k,v] }
     # hash.to_h
@@ -47,10 +44,6 @@ class School
     #   val.sort do |a,b|
     #     a <=> b
     #   end
-    #   # binding.pry
     # end
-    #
-    # # binding.pry
-
   end
 end
