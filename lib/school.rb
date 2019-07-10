@@ -17,18 +17,29 @@ class School
 
   def grade(grade)
     @roster[grade]
-
   end
 
   def sort
-
     hash ={}
-    @roster.each do |key, val|
-      hash[key] = val.sort #sort array name and assign it to new hash
-    end
-    hash.sort_by{|k,v| k} #sort by key and return array
-    hash.to_h #change array to hash
-      # binding.pry
+
+    # method 1
+    # @roster.each do |key, val|
+    #   hash[key] = val.sort #sort array name and assign it to new hash
+    # end
+    # hash.sort_by{|k,v| k} #sort by key and return array
+    #       # hash.to_h #change array to hash
+    # hash
+
+    # method 2
+    # @roster.each {|key, val| hash[key] = val.sort}
+
+    # method 3 destruction
+    @roster.each {|key, val| val.sort!}
+
+
+    # binding.pry
+
+
 
     # hash = @roster.sort_by { |k, v| [k,v] }
     # hash.to_h
