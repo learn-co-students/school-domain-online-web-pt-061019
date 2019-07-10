@@ -22,6 +22,17 @@ class School
 
   def sort
     @roster = @roster.each { |grade, name| @roster[grade].sort! }
-    @roster.sort.to_h
+  end
+
+  def upgrade(student_name)
+    grade = nil
+    @roster.each do |k, v|
+      if @roster[k].include?(student_name)
+        grade = k
+      end
+    end
+    @roster[grade].delete_if { |student| student == student_name }
+    grade += 1
+    add_student(student_name, grade)
   end
 end
