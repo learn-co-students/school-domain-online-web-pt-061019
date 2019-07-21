@@ -11,8 +11,18 @@ class School
   end
 
   def add_student(name, grade)
+    # if @roster[grade] == nil
+    #   @roster[grade] = [name]
+    # else
+    #   @roster[grade] << name
+    # end
+
+    #using or-equal operator
     @roster[grade] ||= []
     @roster[grade] << name
+
+    #using tarnary
+    # @roster[grade] ? @roster[grade] << name : @roster[grade] = name
   end
 
   def grade(grade)
